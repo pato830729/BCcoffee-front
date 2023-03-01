@@ -1,0 +1,411 @@
+.profile_container {
+  // border: 1px blue solid;
+  width: 590px;
+  margin: 40px auto 40px auto;
+
+  .text_area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    // border: 1px solid green;
+    .label_position {
+      display: flex;
+      align-items: center;
+      //   border: 1px solid red;
+      margin-bottom: 20px;
+
+      .text_label {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+      }
+
+      input {
+        width: 500px;
+        border-radius: 5px;
+        padding: 15px;
+        background: $secondary_1_light;
+        border: none;
+
+        &::placeholder {
+          color: $secondary_1;
+          font-size: 14px;
+        }
+
+        &:focus {
+          outline: 2px solid $primary;
+        }
+      }
+
+      .text_radiobox {
+        // border: 1px solid orange;
+        display: inline-flex;
+        padding: 10px;
+        width: 500px;
+
+        div {
+          margin-right: 20px;
+
+          // radio改變樣式
+          input[type='radio'] {
+            display: none;
+          }
+
+          label {
+            position: static;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: $secondary_1;
+          }
+
+          input[type='radio']+label span {
+            cursor: pointer;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: transparent;
+            outline: 2px solid $secondary_1;
+            margin-right: 5px;
+          }
+
+          input[type='radio']:checked+label span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            outline: 2px solid $secondary_1;
+            border: 2px solid white;
+            background: $primary;
+          }
+        }
+      }
+
+      textarea {
+        width: 100%;
+        max-width: 100%;
+        height: 220px;
+        max-height: 220px;
+        resize: none;
+        font-size: 16px;
+
+        &:focus {
+          outline: 2px solid $primary;
+          border: none;
+        }
+      }
+    }
+  }
+
+  .contant_btn {
+    text-align: center;
+
+    div {
+      cursor: pointer;
+      display: inline-block;
+      font-size: 18px;
+      padding: 5px 80px;
+      border-radius: 50px;
+      background: $primary;
+      color: white;
+      margin-top: 20px;
+    }
+  }
+}
+
+.password_container {
+  @extend .profile_container;
+  width: 500px;
+
+  .text_area {
+    input {
+      width: 500px;
+      border-radius: 5px;
+      padding: 15px;
+      background: $secondary_1_light;
+      border: none;
+      margin-bottom: 20px;
+
+      &::placeholder {
+        color: $secondary_1;
+        font-size: 14px;
+      }
+
+      &:focus {
+        outline: 2px solid $primary;
+      }
+    }
+  }
+}
+
+.order_container {
+  @extend .profile_container;
+  margin-top: 20px;
+  width: 100%;
+  text-align: right;
+
+  .search_container {
+    &>input {
+      width: 300px;
+      border-radius: 5px;
+      padding: 10px;
+      background: $secondary_1_light;
+      border: none;
+      margin-bottom: 20px;
+
+      &::placeholder {
+        color: $secondary_1;
+        font-size: 14px;
+      }
+
+      &:focus {
+        outline: 2px solid $primary;
+      }
+    }
+
+    &>button {
+      cursor: pointer;
+      padding: 10px 20px;
+      background: $primary;
+      border-radius: 5px;
+      border: none;
+      color: white;
+    }
+  }
+
+  .shoppingForm_table {
+    width: inherit;
+    border: 1px solid $secondary_3;
+    margin-bottom: 20px;
+
+    .shoppingForm_title {
+      display: flex;
+      justify-content: space-between;
+      background: $secondary_3;
+      text-align: left;
+
+      &>div {
+        color: white;
+        // border: 1px solid red;
+        width: 200px;
+        padding: 5px 10px;
+        font-size: 14px;
+
+        &:first-child {
+          flex-grow: 1;
+        }
+      }
+    }
+
+    .shoppingForm_info {
+      @extend .shoppingForm_title;
+      padding: 10px 0px;
+      background: $secondary_1_light;
+
+      &>div {
+        color: $secondary_3;
+        padding: 10px 10px;
+
+        button {
+          cursor: pointer;
+          text-decoration: none;
+          color: $accent;
+background: transparent;
+border: none;
+font-size: 14px;
+padding: 0;
+        }
+      }
+
+      &:hover {
+        background: #ffffff
+      }
+    }
+
+    .shoppingForm_progress {
+      @extend .shoppingForm_title;
+      background: white;
+      display: flex;
+      align-items: center;
+      height: 100px;
+      padding: 0px;
+      padding-left: 30px;
+      padding-right: 10px;
+
+      .progress_container {
+        // border: 1px solid red;
+        margin-right: 80px;
+        padding: 0;
+        margin-bottom: 20px;
+        position: relative;
+        height: 18px;
+
+        .circle_container {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          position: absolute;
+          // background: #aaa;
+          z-index: 20;
+
+          // .progress_circle.circle_processing ~ .progress_circle {
+          //   background: red;
+          // }
+          .progress_circle {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            position: relative;
+
+            span {
+              width: 60px;
+              position: absolute;
+              color: $secondary_1;
+              top: 20px;
+              left: -20px;
+            }
+          }
+
+          .circle_undone {
+            border: 3px solid rgb(180, 180, 180);
+            background: white;
+          }
+
+          .circle_processing {
+            @extend .circle_undone;
+            border-color: $primary;
+          }
+
+          .circle_done {
+            @extend .circle_undone;
+            background: $primary;
+            border-color: $primary;
+            position: relative;
+
+            &::after {
+              font-family: 'Font Awesome 5 Free';
+              font-size: 10px;
+              font-weight: 900;
+              content: '\f00c';
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+
+        .line_position {
+          position: absolute;
+          width: 100%;
+          // border: 1px solid green;
+          height: 3px;
+          top: 50%;
+          transform: translate(0, -50%);
+          z-index: 15;
+
+          .line_container {
+            position: relative;
+            height: 25px;
+
+            .line_done {
+              position: absolute;
+              width: 100%;
+              height: 3px;
+              background: $primary;
+            }
+
+            .line_undone {
+              position: absolute;
+              width: 100%;
+              height: 3px;
+              background: rgb(180, 180, 180);
+            }
+          }
+        }
+      }
+
+      .progress_btn {
+        padding: 0px;
+
+        .progress_btn_style {
+          text-align: center;
+          padding: 3px;
+          background: #aaa;
+          border-radius: 45px;
+          margin: 5px;
+        }
+
+        .progress_btn_info {
+          background: $secondary_3;
+        }
+
+        .progress_btn_again {
+          background: $primary;
+        }
+
+        .progress_btn_cancel {
+          background: $warning;
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.account_popup_background {
+  z-index: 4000;
+  width: 100vw !important;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.account_popup {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+  z-index: 4500 !important;
+  width: 600px !important;
+  height: 500px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 !important;
+  border-radius: 15px;
+  overflow: hidden;
+
+  .popup_title {
+    width: 100%;
+    height: 60px;
+    background: $secondary_3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    color: white;
+    padding: 0 20px;
+
+    &>i {
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
+
+  .popup_person {
+    padding: 10px 20px;
+  }
+
+  .popup_productsall {
+    height: 260px;
+    background: $secondary_1_light;
+    overflow-y: scroll;
+    .popup_products {
+      padding: 5px 20px;
+    }
+  }
+
+}

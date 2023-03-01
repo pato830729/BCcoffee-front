@@ -1,0 +1,600 @@
+@import '_body.scss';
+
+#admin_header {
+  width: 100%;
+  height: 60px;
+  background: $secondary_2;
+  padding: 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+
+  #admin_account {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+    #admin_account_value {
+      color: $secondary_3;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  #admin_logout {
+    text-decoration: none;
+  }
+}
+
+#admin_main {
+  #admin_nav {
+    width: 250px;
+    height: calc(100% - 60px);
+    // background: lightblue;
+    position: fixed;
+    top: 60px;
+
+    &>ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+
+      &>li {
+        padding: 10px;
+        background: $secondary_2;
+        margin: 20px;
+        border-radius: 10px;
+
+        &:hover {
+          background: $primary;
+
+          &>a {
+            color: white;
+          }
+        }
+
+        &>a {
+          display: block;
+          text-decoration: none;
+          color: $secondary_3;
+        }
+      }
+    }
+  }
+
+  .main_view {
+    // background: lightgoldenrodyellow;
+    width: calc(100vw - 250px);
+    height: calc(100vh - 60px);
+    position: absolute;
+    top: 60px;
+    // padding: 20px 60px;
+    left: 250px;
+  }
+}
+
+// 按鈕樣式控制
+.admin_button {
+  cursor: pointer;
+  width: 150px;
+  height: 35px;
+  background: red;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-right: 20px;
+  transition: all 0.2s ease;
+
+  &>i {
+    margin-right: 10px;
+  }
+}
+
+.button_add {
+  background: $accent;
+
+  &:hover {
+    background-color: $accent_light;
+  }
+}
+
+.button_delete {
+  background: $warning;
+
+  &:hover {
+    background-color: $warning_light;
+  }
+}
+
+.button_search {
+  background: $primary;
+
+  &:hover {
+    background-color: $primary_light;
+  }
+}
+
+.button_close {
+  background: $warning;
+
+  &:hover {
+    background-color: $warning_light;
+  }
+}
+
+.button_save {
+  background: $accent;
+
+  &:hover {
+    background-color: $accent_light;
+  }
+}
+
+.button_controll {
+  width: 100px;
+  background: $accent;
+
+  &:hover {
+    background-color: $accent_light;
+  }
+}
+
+// 彈窗背景+卡片
+.darkDialogBg {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.dialogBg {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  background: white;
+  border-radius: 15px;
+  overflow-x: hidden;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+  z-index: 1500;
+
+  .dialogTitle {
+    background: $secondary_3;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .dialogClose {
+      cursor: pointer;
+      font-size: 30px;
+    }
+  }
+
+  .dialog_container {
+    padding: 30px;
+  }
+}
+
+// 管理標題
+.admin_title_search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  padding: 30px 10px 30px 30px;
+
+  .admin_title_addDelete {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      margin: 0;
+      margin-right: 50px;
+      font-size: 28px;
+      color: $secondary_3;
+      border-bottom: 2px solid $secondary_3;
+    }
+  }
+
+  .search_container {
+    display: flex;
+    align-items: center;
+
+    &>input {
+      width: 400px;
+      height: 35px;
+      border-radius: 5px;
+      padding: 15px;
+      background: $secondary_1_light;
+      border: none;
+      margin-right: 10px;
+
+      &::placeholder {
+        color: $secondary_1;
+        font-size: 14px;
+      }
+
+      &:focus {
+        outline: 2px solid $primary;
+      }
+    }
+  }
+}
+
+// 表格樣式
+.admin_table {
+  width: 100%;
+  height: calc(100vh - 160px);
+  // background: rgb(53, 81, 90);
+  padding: 0px 30px 30px 30px;
+
+  &>table {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid $secondary_3;
+    width: 100%;
+    overflow: hidden;
+
+    &>thead {
+      display: block;
+      height: 50px;
+      width: 100%;
+      background: $secondary_3;
+      border: 2px solid $secondary_3;
+      color: white;
+      text-align: left;
+
+      &>tr {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        width: calc(100% - 15px);
+        justify-content: space-between;
+
+        &>th {
+          display: inline-flex;
+          height: 50px;
+          padding: 10px 20px;
+        }
+
+        .table_th_id {
+          width: 200px;
+        }
+
+        .table_th_ell {
+          width: 200px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .table_th_short {
+          width: 150px;
+        }
+      }
+    }
+
+    &>tbody {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - 240px);
+      top: 50px;
+      overflow-y: scroll;
+
+      // border: 1px solid red;
+      &>tr {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        justify-content: space-between;
+        width: 100%;
+
+        &:hover {
+          background: $secondary_2_light;
+        }
+
+        &>td {
+          display: block;
+          height: 50px;
+          padding: 10px 20px;
+        }
+
+        .table_td_id {
+          width: 200px;
+        }
+
+        .table_td_ell {
+          width: 200px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .table_th_short {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+
+// 彈窗選項樣式
+.dialog_container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  .text_container{
+    width: 100%;
+    display: flex;
+    .dialog_container_left {
+    width: 50%;
+// border: 1px solid blue;
+    .adminDialogBg_inputStyle {
+      display: flex;
+      margin-bottom: 40px;
+
+      &>label {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 90px;
+        // border: 1px solid red;
+        text-align: left;
+      }
+
+      .input_position {
+        position: relative;
+
+        &>input {
+          width: 350px;
+          height: 35px;
+          border-radius: 5px;
+          padding: 15px;
+          background: $secondary_1_light;
+          border: none;
+          margin-right: 10px;
+          font-size: 16px;
+
+          &::placeholder {
+            color: $secondary_1;
+            font-size: 14px;
+          }
+
+          &:focus {
+            outline: 2px solid $primary;
+          }
+        }
+
+        &>p {
+          position: absolute;
+          margin: 0;
+          font-size: 14px;
+          color: $warning;
+          bottom: -25px;
+        }
+      }
+    }
+
+    .adminDialogBg_checkbox {
+      display: flex;
+      margin-bottom: 40px;
+
+      &>label {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        // border: 1px solid red;
+        text-align: left;
+        margin-right: 5px;
+      }
+
+      &>label:nth-child(1) {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 90px;
+        // border: 1px solid red;
+        text-align: left;
+      }
+    }
+
+    .adminDialogBg_selectStyle {
+      display: flex;
+      margin-bottom: 40px;
+
+      &>label {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 90px;
+        // border: 1px solid red;
+        text-align: left;
+      }
+
+      &>select {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 120px;
+        border: 1px solid $secondary_1;
+        // border: 1px solid red;
+        text-align: left;
+      }
+    }
+    .adminDialogBg_textareaStyle {
+      display: flex;
+      margin-bottom: 40px;
+
+      &>label {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 90px;
+        // border: 1px solid red;
+        text-align: left;
+      }
+      &>textarea{
+        width: 360px;
+        border: 1px solid $secondary_1;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .dialog_container_right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid blue;
+    .adminDialogBg_inputStyle {
+      display: flex;
+      margin-bottom: 40px;
+
+      &>label {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 90px;
+        // border: 1px solid red;
+        text-align: left;
+      }
+
+      .input_position {
+        position: relative;
+
+        &>input {
+          width: 350px;
+          height: 35px;
+          border-radius: 5px;
+          padding: 15px;
+          background: $secondary_1_light;
+          border: none;
+          margin-right: 10px;
+          font-size: 16px;
+
+          &::placeholder {
+            color: $secondary_1;
+            font-size: 14px;
+          }
+
+          &:focus {
+            outline: 2px solid $primary;
+          }
+        }
+
+        &>p {
+          position: absolute;
+          margin: 0;
+          font-size: 14px;
+          color: $warning;
+          bottom: -25px;
+        }
+      }
+    }
+    .adminDialogBg_textareaStyle {
+      display: flex;
+      margin-bottom: 40px;
+
+      &>label {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 90px;
+        // border: 1px solid red;
+        text-align: left;
+      }
+      &>textarea{
+        width: 380px;
+        border: 1px solid $secondary_1;
+        border-radius: 10px;
+      }
+    }
+    .adminDialogBg_image{
+      display: flex;
+      margin-bottom: 40px;
+
+      &>label {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 90px;
+        // border: 1px solid red;
+        text-align: left;
+      }
+    }
+    .adminDialogBg_selectStyle {
+      display: flex;
+      margin-bottom: 40px;
+
+      &>label {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 90px;
+        // border: 1px solid red;
+        text-align: left;
+      }
+
+      &>select {
+        display: inline-block;
+        font-size: 16px;
+        color: $secondary_1;
+        text-align: right;
+        width: 120px;
+        border: 1px solid $secondary_1;
+        // border: 1px solid red;
+        text-align: left;
+      }
+    }
+    .dialog_container_productsbox{
+      width: 450px;
+      height: 500px;
+      border: 2px solid $secondary_3;
+      overflow-y: scroll;
+      .dialog_container_product{
+        width: 100%;
+        height: 80px;
+        background: $secondary_2;
+      }
+    }
+  }
+  }
+  .dialog_btn_container{
+    text-align: center;
+  }
+
+  
+
+}

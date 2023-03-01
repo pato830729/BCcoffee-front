@@ -1,0 +1,106 @@
+#news_cardBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+  position: relative;
+  .news_card {
+    cursor: pointer;
+    // border: 1px solid red;
+    width: 300px;
+    height: 420px;
+    background: white;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+    border-radius: 15px;
+    margin: 20px 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    .news_img {
+      height: 40%;
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        transition: all 0.3s ease;
+      }
+    }
+    .news_textarea {
+      padding: 20px;
+      span:first-child {
+        color: $secondary_1;
+        font-size: 14px;
+        font-weight: 500;
+        margin-right: 5px;
+      }
+      span:nth-child(2) {
+        color: $secondary_1;
+        font-size: 14px;
+        font-weight: 500;
+        margin-right: 5px;
+      }
+      h1 {
+        color: $secondary_3;
+        font-size: 16px;
+        text-align: left;
+        margin: 8px 0px;
+      }
+      p {
+        color: $secondary_1;
+        font-size: 14px;
+        line-height: 1.5rem;
+        margin: 0px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      a {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        text-decoration: none;
+        font-weight: 500;
+        color: $primary;
+        i {
+          margin-left: 5px;
+        }
+      }
+    }
+    &:hover {
+      transform: translate(0, -15px);
+      .news_img {
+        height: 40%;
+        width: 100%;
+        overflow: hidden;
+        img {
+          transform: scale(1.2);
+          object-fit: cover;
+          object-position: 50% 50%;
+        }
+      }
+      h1 {
+        color: $secondary_3_light;
+      }
+      a {
+        color: $primary_light;
+      }
+    }
+  }
+}
+
+.addnewsbtn_position {
+  text-align: center;
+  .addnewsbtn {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px 60px;
+    border-radius: 50px;
+    background: $primary;
+    color: white;
+    margin-bottom: 50px;
+  }
+}

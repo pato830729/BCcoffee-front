@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+}
+
+$primary: #fc9f4d;
+$primary_light: #ffbb80;
+$accent: #33a6b8;
+$accent_light: #3abbcf;
+$secondary_1: #737373;
+$secondary_1_light2: #8d8d8d;
+$secondary_1_light: #f1f1f1;
+$secondary_2: #dac9a6;
+$secondary_2_light:#f5f2ec;
+$secondary_3: #a35e47;
+$secondary_3_light: #c4846f;
+$warning: #e43939;
+$warning_light: #f15959;
+$success: #52b96c;
+
+.swal2-container{
+  z-index: 5000 !important
+}

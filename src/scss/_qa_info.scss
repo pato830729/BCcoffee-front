@@ -1,0 +1,71 @@
+#qa_container {
+  //   border: 1px solid blue;
+  .list_container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    .qa_list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .qa_flex{
+        border-bottom: 1px solid $secondary_1;
+        padding: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // border: 1px solid red;
+       .qa_text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          color: $secondary_1;
+          font-size: 26px;
+          margin-right: 10px;
+          font-weight: 500;
+        }
+        p {
+          color: $secondary_1;
+          display: inline-block;
+          margin: 0;
+        }
+      }
+      .qa_infobtn {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        // background: lightblue;
+        position: relative;
+        display: flex;
+        align-items: center;
+        .qa_infobtn_line {
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background: $primary;
+          border-radius: 30px;
+          transition: all 0.2s ease;
+        }
+        .rotate {
+          transform: rotate(90deg);
+          transform-origin: center;
+        }
+      } 
+      }
+      
+    }
+  }
+}
+
+.ansShow-enter-active, .ansShow-leave-active {
+  transition: opacity .3s ease;
+}
+.ansShow-enter-from, .ansShow-leave-to{
+  opacity: 0;
+}
+
+.ansShow-enter-to, .ansShow-leave-from{
+  opacity: 1;
+}

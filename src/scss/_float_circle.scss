@@ -1,0 +1,25 @@
+.float_circle {
+  z-index: 1000;
+  cursor: pointer;
+  background: $primary;
+  width: 90px;
+  height: 90px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 30px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-size: 14px;
+    color: white;
+    // margin-bottom: 2px;
+  }
+  i {
+    font-size: 30px;
+    color: white;
+  }
+}

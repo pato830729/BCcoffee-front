@@ -1,0 +1,58 @@
+@import '_body.scss';
+
+.fullcontainer {
+    width: 100%;
+    height: 100vh;
+    background: lightcyan;
+    position: fixed;
+    position: relative;
+    overflow: hidden;
+    background: url(../images/milad-fakurian-UqP7U400AZs-unsplash.jpg);
+    background-size: cover;
+
+    .Products_name_container {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        text-align: right;
+        &>h1{
+            font-size: 60px;
+            color: $secondary_3;
+            margin: 0
+        
+        }
+        &>h2{
+            color: $secondary_1;
+            font-size: 30px;
+            margin: 0;
+        }
+    }
+    .Products_img_container{
+        z-index: 5;
+        width: 700px;
+        height: 700px;
+        border: 1px solid red;
+        position: absolute;
+        left: 300px;
+        bottom: 50px;
+        &>img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .Products_img_backcontainer{
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+        position: absolute;
+        left: 600px;
+        bottom: 150px;
+        filter: blur(5px);
+        &>img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

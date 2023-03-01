@@ -1,0 +1,36 @@
+#container {
+  padding: 0px 30px;
+  padding-top: 80px;
+  //   border: 1px solid red;
+  max-width: 1200px;
+  margin: auto;
+  .pageTitle {
+    span {
+      display: inline-block;
+      font-size: 14px;
+      position: relative;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      color: $secondary_3;
+      font-weight: 500;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0px;
+        height: 2px;
+        background: $secondary_3;
+        border-radius: 15px;
+      }
+    }
+    h1 {
+      font-size: 26px;
+      margin: 0;
+      letter-spacing: 0.5rem;
+      color: $secondary_3;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+  }
+}

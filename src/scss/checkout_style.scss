@@ -1,0 +1,873 @@
+@import '_body.scss';
+
+.processStep_container {
+    margin: 0px auto;
+    width: 800px;
+    height: 40px;
+    // background: lightcyan;
+    position: relative;
+    margin-bottom: 60px;
+
+    .processStep_circle_container {
+        z-index: 5;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+
+        .processStep_circle {
+            width: 40px;
+            height: 40px;
+            border: 3px solid $secondary_1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            font-size: 18px;
+            color: $secondary_1;
+            position: relative;
+
+            .circletext1,
+            .circletext2,
+            .circletext3 {
+                position: absolute;
+                top: 45px;
+                width: 100px;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+
+        .circle_done {
+            border: 3px solid $primary;
+            background: $primary;
+            color: white;
+
+            &::before {
+                color: $primary;
+            }
+        }
+
+        .circle_on {
+            border: 3px solid $primary;
+            color: $primary;
+        }
+
+    }
+
+    .processStep_line_container {
+        .processStep_line_gary {
+            width: 800px;
+            height: 3px;
+            background: $secondary_1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .processStep_line_done {
+            width: 0px;
+            height: 3px;
+            background: $primary;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            transition: all .5 ease;
+        }
+    }
+}
+
+// 步驟一
+.processStep1_container {
+    // background: lightgray;
+
+    &>h1 {
+        color: $secondary_3;
+        font-size: 22px;
+        margin: 10px;
+
+    }
+
+    .products_discount_display {
+        // background: rgb(126, 88, 88);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .allproducts_container {
+            // background: lightsteelblue;
+            width: 68%;
+            height: 500px;
+            border-top: 3px solid $secondary_3;
+            border-bottom: 3px solid $secondary_3;
+            overflow-y: scroll;
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .product_container {
+                display: flex;
+                padding: 15px;
+                background: white;
+                border-bottom: 2px dashed $secondary_2;
+
+                .product_img {
+                    width: 80px;
+                    height: 80px;
+                    background: $primary_light;
+                    overflow: hidden;
+                    border-radius: 5px;
+                    position: relative;
+                    margin-right: 20px;
+
+                    &>img {
+                        position: absolute;
+                        width: 70%;
+                        height: 70%;
+                        object-fit: cover;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+                    }
+                }
+
+                .product_text {
+                    width: calc(100% - 100px);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    // background: lightblue;
+
+                    .fa-trash-can {
+                        color: $warning;
+                        font-size: 28px;
+                        cursor: pointer;
+                        transition: all .2s ease;
+
+                        &:hover {
+                            color: $warning_light;
+                        }
+                    }
+
+                    .product_title_custom {
+                        width: 350px;
+
+                        // border: 1px solid red;
+                        .cart_product_title_delete {
+                            width: 100%;
+                            // background: rgba(240, 128, 128, 0.315);
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            color: $secondary_3;
+                            font-size: 20px;
+                        }
+
+                        .cart_product_allcustom {
+                            // background: lightpink;
+                            width: 100%;
+                            margin: 0px 0px 20px;
+
+                            &>span {
+                                margin: 0 5px 0 0;
+                                font-size: 14px;
+                                color: $secondary_1;
+                            }
+                        }
+                    }
+
+
+                    .cart_controllnum_titleprice {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        // background: lightskyblue;
+                        .cart_controllnum {
+                            display: flex;
+                            align-items: center;
+
+                            &>input {
+                                margin: 0px 5px;
+                                border-radius: 5px;
+                                width: 100px;
+                                height: 35px;
+                                border: 3px solid $secondary_1;
+                                text-align: center;
+                                font-size: 16px;
+                                line-height: 30px;
+                                font-weight: 500;
+
+                                &[type='number']::-webkit-outer-spin-button,
+                                &[type='number']::-webkit-inner-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+
+                                ;
+
+                                &[type=number] {
+                                    -moz-appearance: textfield;
+                                }
+                            }
+
+                            .cart_controllbtn {
+                                cursor: pointer;
+                                width: 35px;
+                                height: 35px;
+                                // border: 3px solid $primary;
+                                border-radius: 5px;
+                                background: $primary;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: white;
+                                transition: all .2s ease;
+
+                                &:hover {
+                                    background: $primary_light;
+                                }
+                            }
+                        }
+
+                        &>span {
+                            font-size: 20px;
+                            color: $secondary_3;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+
+        .titlepriceDiscount_container {
+            // background: lightyellow;
+            width: 30%;
+
+            .discount_container {
+                width: 100%;
+                height: 100px;
+                padding: 15px;
+                background: white;
+                border-radius: 5px;
+                filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.15));
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+                &>h2 {
+                    margin: 0;
+                    font-size: 18px;
+                    color: $secondary_3;
+                }
+
+                .discount_text_container {
+                    display: flex;
+                    justify-content: space-between;
+
+                    &>input {
+                        width: 75%;
+                        height: 35px;
+                        border-radius: 5px;
+                        padding: 10px;
+                        background: $secondary_1_light;
+                        border: none;
+
+                        &::placeholder {
+                            color: $secondary_1;
+                            font-size: 14px;
+                        }
+
+                        &:focus {
+                            outline: 2px solid $primary;
+                        }
+
+                        &[type='number']::-webkit-outer-spin-button,
+                        &[type='number']::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+
+                        ;
+
+                        &[type=number] {
+                            -moz-appearance: textfield;
+                        }
+                    }
+
+                    &>button {
+                        cursor: pointer;
+                        width: 70px;
+                        height: 35px;
+                        border: none;
+                        background: $primary;
+                        border-radius: 5px;
+                        font-weight: 500;
+                        color: white;
+                        font-size: 14px;
+                        transition: all .2s ease;
+
+                        &:hover {
+                            background: $primary_light;
+                        }
+                    }
+                }
+            }
+
+            .total_container {
+                width: 100%;
+                height: 100%;
+                background: white;
+                border-radius: 5px;
+                filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.15));
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .total_checkout {
+                    width: 100%;
+                    height: 450px;
+                    padding: 0px 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .total_text {
+                        .totalPrice {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 10px 0;
+
+                            &>p {
+                                font-size: 16px;
+                                color: $secondary_1;
+                                margin: 0;
+                            }
+
+                            &>span {
+
+                                font-size: 18px;
+                                color: $secondary_1;
+                                font-weight: 500;
+                            }
+                        }
+
+                        .discountPrice {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 10px 0;
+
+                            &>p {
+                                font-size: 16px;
+                                color: $secondary_1;
+                                margin: 0;
+                            }
+
+                            &>span {
+
+                                font-size: 18px;
+                                color: $warning;
+                                font-weight: 500;
+                            }
+                        }
+
+                        .deletediscount {
+                            display: flex;
+                            justify-content: flex-end;
+
+                            .deletediscount_btn {
+                                cursor: pointer;
+                                width: 100px;
+                                padding: 5px;
+                                background: $warning;
+                                font-size: 14px;
+                                color: white;
+                                border-radius: 5px;
+                                text-align: center;
+                                transition: all .2 ease;
+
+                                &:hover {
+                                    background: $warning_light;
+                                }
+                            }
+                        }
+                    }
+
+                    .discountTotalPrice {
+                        border-top: 2px dashed $secondary_2;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 10px 0;
+
+                        &>p {
+                            font-size: 16px;
+                            color: $secondary_1;
+                            margin: 0;
+                        }
+
+                        &>span {
+
+                            font-size: 22px;
+                            color: $secondary_3;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+
+                .checkout {
+                    cursor: pointer;
+                    width: 100%;
+                    height: 50px;
+                    background: $primary;
+                    color: white;
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .2s ease;
+border: none;
+                    &>i {
+                        font-size: 16px;
+                        margin-right: 10px;
+                    }
+
+                    &:hover {
+                        background: $primary_light;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+
+// 步驟二
+.processStep2_container {
+    // background: lightgray;
+
+    &>h1 {
+        color: $secondary_3;
+        font-size: 22px;
+        margin: 10px 0px;
+
+    }
+
+    .paycontainer {
+        display: flex;
+        width: 100%;
+
+        .leftcontainer {
+            width: 60%;
+            // background: lightcyan;
+
+            .samecheckbox {
+                display: flex;
+                align-items: center;
+                margin: 30px 0px;
+
+                // background: red;
+                &>p {
+                    display: inline-block;
+                    width: 150px;
+                    margin: 0;
+                    width: 100px;
+                    color: $secondary_3;
+                    font-size: 18px;
+                    text-align: right;
+                    margin-right: 10px;
+                }
+
+                &>label {
+                    color: $primary;
+                }
+            }
+
+            .input_container {
+                margin: 30px 0px;
+
+                &>label {
+                    display: inline-block;
+                    font-size: 16px;
+                    color: $secondary_3;
+                    // border: 1px solid red;
+                    width: 100px;
+                    text-align: right;
+                    margin-right: 10px;
+                }
+
+                &>input {
+                    width: 500px;
+                    border-radius: 5px;
+                    padding: 15px;
+                    background: $secondary_1_light;
+                    border: none;
+
+                    &::placeholder {
+                        color: $secondary_1;
+                        font-size: 14px;
+                    }
+
+                    &:focus {
+                        outline: 2px solid $primary;
+                    }
+                }
+            }
+        }
+
+        .rightcontainer {
+            width: 40%;
+            // background: lightpink;
+
+            .radio_container {
+                display: flex;
+                margin: 30px 0px;
+
+                &>label {
+                    margin-right: 10px;
+                    text-align: right;
+                    display: inline-block;
+                    font-size: 16px;
+                    color: $secondary_3;
+                    // border: 1px solid red;
+                    width: 100px;
+
+                }
+
+                .radio_choosebox {
+                    display: flex;
+
+
+                    input[type='radio'] {
+                        display: none;
+                    }
+
+                    label {
+                        position: static;
+                        display: flex;
+                        align-items: center;
+                        font-size: 16px;
+                        color: $secondary_1;
+                        margin-right: 20px;
+                    }
+
+                    input[type='radio']+label span {
+                        cursor: pointer;
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background: transparent;
+                        outline: 2px solid $secondary_1;
+                        margin-right: 5px;
+                    }
+
+                    input[type='radio']:checked+label span {
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        outline: 2px solid $secondary_1;
+                        border: 2px solid white;
+                        background: $primary;
+                    }
+                }
+            }
+
+            // 信用卡~~~~
+            .card_container {
+                .input_container {
+                    display: flex;
+                    align-items: center;
+                    margin: 30px 0px;
+
+                    &>label {
+                        margin-right: 10px;
+                        text-align: right;
+                        display: inline-block;
+                        font-size: 16px;
+                        color: $secondary_3;
+                        // border: 1px solid red;
+                        width: 100px;
+                    }
+
+                    .cardnum4 {
+                        &>input {
+                            width: 70px;
+                            border-radius: 5px;
+                            padding: 5px;
+                            background: $secondary_1_light;
+                            border: none;
+                            text-align: center;
+                            font-size: 16px;
+
+                            &[type='number']::-webkit-outer-spin-button,
+                            &[type='number']::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+
+                            ;
+
+                            &[type=number] {
+                                -moz-appearance: textfield;
+                            }
+
+                            &::placeholder {
+                                color: $secondary_1;
+                                font-size: 14px;
+                            }
+
+                            &:focus {
+                                outline: 2px solid $primary;
+                            }
+
+
+                        }
+
+                        &>span {
+                            margin: 0px 5px;
+                        }
+                    }
+
+                    &>select {
+                        width: 100px;
+                        border-radius: 5px;
+                        padding: 5px;
+                        background: $secondary_1_light;
+                        border: none;
+                        text-align: center;
+                        margin-right: 20px;
+                        font-size: 16px;
+
+                        option {
+                            width: 100px;
+                            padding: 5px;
+                            text-align: center;
+                            border-radius: 5px;
+
+                        }
+
+                    }
+                }
+
+                .card_allcard {
+                    width: 350px;
+                    height: 180px;
+                    background: $secondary_3;
+                    border-radius: 15px;
+                    margin-left: 100px;
+                    transform-style: preserve-3d;
+                    perspective: 1000px;
+                    position: relative;
+                    transition: 0.5s all ease;
+                    overflow: hidden;
+
+                    // &:hover {
+                    //     transform: rotateY(180deg);
+                    // }
+
+                    .front {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background: blue;
+                        backface-visibility: hidden;
+                    }
+
+                    .back {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background: $secondary_3;
+                        top: 0;
+                        left: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        padding: 20px;
+                        transform: rotateY('180deg');
+                        backface-visibility: hidden;
+
+                        .allcard_cardnum {
+                            text-align: center;
+
+                            &>span {
+                                width: 100px;
+                                // border: 1px solid red;
+                                margin: 0px 15px;
+                                color: white;
+                                font-size: 20px;
+                            }
+                        }
+
+                        .allcard_month {
+                            text-align: right;
+                            margin-top: 10px;
+
+                            &>span {
+                                width: 100px;
+                                // border: 1px solid red;
+                                margin: 0px 5px;
+                                color: white;
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    .btn_container {
+        text-align: center;
+        margin: 30px 0px;
+
+        .payment_btn {
+            cursor: pointer;
+            width: 120px;
+            padding: 5px 0px;
+            border: none;
+            border-radius: 50px;
+            background: $primary;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+
+            &:nth-child(1) {
+                margin-right: 20px;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+}
+
+// 步驟三
+.processStep3_container {
+    // background: lightgray;
+
+    &>h1 {
+        color: $secondary_3;
+        font-size: 26px;
+        margin: 20px 0px 5px;
+        text-align: center;
+    }
+
+    &>h3 {
+        color: $secondary_3;
+        font-size: 16px;
+        margin: 5px 0px 20px;
+        text-align: center;
+    }
+
+    .cart_display {
+        display: flex;
+        .cart_info {
+            margin-bottom: 30px;
+            width: 100%;
+
+            &>p {
+                margin: 30px 0;
+            }
+        }
+
+        .cartinfo_products_container {
+            width: 100%;
+            margin-top: 30px;
+            border-bottom: 2px solid $secondary_3;
+            .cartinfo_products_container_title {
+                width: 100%;
+                height: 40px;
+                padding: 0 20px;
+                background: $secondary_3;
+                line-height: 40px;
+                color: white;
+                font-size: 18px;
+            }
+
+            .cartinfo_products_container_products {
+                width: 100%;
+                height: 400px;
+                overflow-y: scroll;
+                background: white;
+                .cartinfo_products_container_product{
+                    width: 100%;
+                    // background: lightcyan;
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 20px;
+                    border-bottom: 2px dashed $secondary_3;
+                    .product_img{
+                        width: 80px;
+                    height: 80px;
+                    background: $primary_light;
+                    overflow: hidden;
+                    border-radius: 5px;
+                    position: relative;
+                    margin-right: 50px;
+
+                    &>img {
+                        position: absolute;
+                        width: 70%;
+                        height: 70%;
+                        object-fit: cover;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+                    }
+                    }
+                    .cart_product_title{
+                        width: 300px;
+                        font-size: 16px;
+                        color: $secondary_3;
+                    }
+                    .cart_product_quantity{
+                        font-size: 18px;
+                        color: $secondary_3;
+                    }
+                }
+            }
+
+            .cartinfo_products_container_price {
+                width: 100%;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}

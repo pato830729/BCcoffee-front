@@ -1,0 +1,200 @@
+#nav_fixed {
+  z-index: 1200;
+  width: 100%;
+  height: 60px;
+  //   background: lightblue;
+  position: fixed;
+  #nav_container {
+    padding: 0 80px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #nav_logo {
+      margin-top: 10px;
+      width: 50px;
+      height: 50px;
+      // background: lightcoral;
+      &>a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        &>img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      }
+      
+    }
+    #nav_icon {
+      display: flex;
+      align-items: center;
+      ul {
+        // border: 1px solid red;
+        height: 60px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+          margin: 5px;
+          a {
+            display: block;
+            //   border: 1px solid blue;
+            padding: 10px;
+            color: $secondary_3;
+            font-size: 24px;
+            position: relative;
+            .cart_numberbg{
+              position: absolute;
+              top: 5px;
+              right: -5px;
+              width: 20px;
+              height: 20px;
+              background: $primary;
+              border-radius: 50%;
+              text-align: center;
+              font-size: 12px;
+              color: white;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1500;
+    height: 0vh;
+    width: 100vw;
+    background: transparent;
+    transition: all 0.5s ease;
+    .hamburger_btn {
+      position: absolute;
+      right: 30px;
+      top: 5px;
+      width: 50px;
+      height: 50px;
+      // background: red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      .hamburger_btn_box {
+        width: 30px;
+        height: 25px;
+        // border: 1px solid blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .hamburger_btn_line {
+          width: 100%;
+          height: 3px;
+          border-radius: 20px;
+          background: $secondary_3;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+    .hum_list {
+      padding: 0;
+      margin: auto;
+      width: 300px;
+      height: 100vh;
+      display: none;
+      list-style: none;
+      .hum_item {
+        margin: 20px 0px;
+        .hum_link {
+          text-decoration: none;
+          color: $secondary_2;
+          font-size: 20px;
+          position: relative;
+          padding: 5px 0px;
+          transition: color 0.2s ease;
+          &:hover {
+            color: white;
+          }
+          &::after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: $primary;
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+            transform-origin: left;
+          }
+          &:hover::after {
+            transform: scaleX(1);
+          }
+        }
+        .active {
+          color: white;
+        }
+      }
+    }
+  }
+  .change {
+    height: 100vh;
+    background: $secondary_3;
+    .humLine_1 {
+      transform: rotateZ(-45deg) translate(-7px, 8px);
+      background: white !important;
+    }
+    .humLine_2 {
+      opacity: 0;
+      background: white !important;
+    }
+    .humLine_3 {
+      transform: rotateZ(45deg) translate(-7px, -8px);
+      background: white !important;
+    }
+    .hum_list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+#social_icon {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  //   border: 1px solid red;
+  margin: 30px;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      &:nth-child(2) {
+        margin: 20px 0px;
+      }
+      a {
+        text-decoration: none;
+        display: block;
+        font-size: 20px;
+        color: $secondary_3;
+        // border: 1px solid blue;
+        text-align: center;
+        &:hover {
+          color: $secondary_2;
+        }
+      }
+    }
+  }
+}
+
+.swal2-container{
+  z-index: 2500
+}
