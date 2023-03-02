@@ -164,18 +164,18 @@
     <div class="video_mask">
         <video autoplay muted loop>
             <source
-                src="../../images/Palm Tree Shadow Free White Background Videos, Motion Graphics, No Copyright _ All Background Videos.mp4"
+                src="../../images/treeshadow.mp4"
                 type="video/mp4">
         </video>
     </div>
 </template>
 
 <script setup>
-import { api } from '@/plugins/axios'
+import { api } from '../../plugins/axios'
 import { reactive } from 'vue'
 import Swal from 'sweetalert2'
-import NewsCard from '@/components/NewsCard.vue'
-import NavMenu from '@/components/NavMenu.vue'
+import NewsCard from '../../components/NewsCard.vue'
+import NavMenu from '../../components/NavMenu.vue'
 
 const news = reactive([]);
 const newsAll = reactive([]);

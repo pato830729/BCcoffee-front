@@ -273,10 +273,10 @@
     </div>
 </template>
 <script setup>
-import { apiAuth } from '@/plugins/axios'
+import { apiAuth } from '../../plugins/axios'
 import { reactive, computed, ref } from 'vue'
-import { useUserStore } from '@/stores/user'
-import NavMenu from '@/components/NavMenu.vue'
+import { useUserStore } from '../../stores/user'
+import NavMenu from '../../components/NavMenu.vue'
 import Swal from 'sweetalert2'
 
 const user = useUserStore()

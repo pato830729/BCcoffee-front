@@ -116,9 +116,9 @@
   <div class="background_main"></div>
 </template>
 <script setup>
-import { apiAuth } from '@/plugins/axios'
+import { apiAuth } from '../plugins/axios'
 import { storeToRefs } from 'pinia'
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '../stores/user'
 import { onMounted, ref, reactive, computed } from 'vue'
 import { initMenu } from '../js/nav.js'
 import { useRouter } from 'vue-router'

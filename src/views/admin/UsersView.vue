@@ -36,8 +36,8 @@
           <td class="table_td_id">{{ user._id }}</td>
           <td class="table_td_ell">{{ user.account }}</td>
           <td class="table_td_ell">{{ user.email }}</td>
-          <td class="table_td_ell" :style="(user.suspension) ? 'color:#52b96c;' : 'color:#e43939;'">{{
-            (user.suspension) ? '正常' : '停權' }}</td>
+          <td class="table_td_ell" :style="(user.suspension) ? 'color:#e43939;' : 'color:#52b96c;'">{{
+            (user.suspension) ? '停權' : '正常' }}</td>
           <td class="table_th_short"><button class="admin_button button_controll" @click="openDialog(idx)"><i
                 class="fa-solid fa-pen"></i>修改</button></td>
         </tr>
@@ -80,8 +80,8 @@
             <div class="adminDialogBg_selectStyle">
               <label for="dialog_select_sell">狀態：</label>
               <select id="dialog_select_sell" v-model="form.suspension">
-                <option value="true" selected>正常</option>
-                <option value="false">停權</option>
+                <option value="false">正常</option>
+                <option value="true">停權</option>
               </select>
             </div>
 
@@ -105,10 +105,6 @@
                 <input type="text" id="dialog_name" v-model="form.phone" disabled />
               </div>
             </div>
-
-
-
-
           </div>
         </div>
 
@@ -125,7 +121,7 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
-import { apiAuth } from '@/plugins/axios'
+import { apiAuth } from '../../plugins/axios'
 import Swal from 'sweetalert2'
 
 const valid = ref(false)
@@ -168,7 +164,14 @@ const openDialog = (idx) => {
 const submit = async () => {
   if (!valid.value) return
   const fd = new FormData()
+  fd.append('_id', form._id)
+  fd.append('account', form.account)
+  fd.append('email', form.email)
+  fd.append('name', form.name)
+  fd.append('address', form.address)
+  fd.append('phone', form.phone)
   fd.append('suspension', form.suspension)
+  console.log(form._id)
   // try {
   const { data } = await apiAuth.patch('/users/' + form._id, fd)
   users[form.idx] = data.result

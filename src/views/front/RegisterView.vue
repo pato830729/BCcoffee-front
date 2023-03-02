@@ -96,10 +96,10 @@
 <script setup>
 import {ref, reactive, onMounted} from 'vue'
 import validator from 'validator'
-import { api } from '@/plugins/axios'
+import { api } from '../../plugins/axios'
 import Swal from 'sweetalert2'
 import { useRouter } from 'vue-router'
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '../../stores/user'
 
 onMounted(() => {
 const darkBgsignIp = document.querySelector('.dark_bg_signIp')

@@ -37,7 +37,7 @@
 </template>
 <script setup>
 import { storeToRefs } from 'pinia'
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '../stores/user'
 
 const user = useUserStore()
 const { avatar, account } = storeToRefs(user)

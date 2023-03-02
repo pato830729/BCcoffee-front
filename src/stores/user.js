@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { api,apiAuth } from '@/plugins/axios'
+import { api,apiAuth } from '../plugins/axios'
 import Swal from 'sweetalert2'
-import router from '@/plugins/router'
+import router from '../plugins/router'
 
 export const useUserStore = defineStore('user', () => {
   const token= ref('')

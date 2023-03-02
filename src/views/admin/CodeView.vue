@@ -138,7 +138,7 @@
 </template>
 
 <script setup>
-import { apiAuth } from '@/plugins/axios'
+import { apiAuth } from '../../plugins/axios'
 import { reactive, ref } from 'vue'
 import Swal from 'sweetalert2'
 

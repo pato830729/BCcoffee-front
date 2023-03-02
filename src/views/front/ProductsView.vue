@@ -140,12 +140,12 @@
   </div>
 </template>
 <script setup>
-import NavMenu from '@/components/NavMenu.vue'
-import { api } from '@/plugins/axios'
+import NavMenu from '../../components/NavMenu.vue'
+import { api } from '../../plugins/axios'
 import { ref, reactive } from 'vue'
 import Swal from 'sweetalert2'
 import { onMounted } from 'vue'
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '../../stores/user'
 import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()

@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import FrontLayout from '@/layouts/FrontLayout.vue'
-import FrontHomeView from '@/views/front/FrontHomeView.vue'
-import NotFoundView from '@/views/NotFoundView.vue'
-import { useUserStore } from '@/stores/user'
+import FrontLayout from '../layouts/FrontLayout.vue'
+import FrontHomeView from '../views/front/FrontHomeView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
+import { useUserStore } from '../stores/user'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.BASE_URL),
@@ -24,7 +24,7 @@ const router = createRouter({
         {
           path: 'register',
           name: 'register',
-          component: () => import('@/views/front/RegisterView.vue'),
+          component: () => import('../views/front/RegisterView.vue'),
           meta: {
             title: 'BCcoffee | 登入及註冊',
             login: false,
@@ -34,7 +34,7 @@ const router = createRouter({
         {
           path: 'account',
           name: 'account',
-          component: () => import('@/views/front/AccountView.vue'),
+          component: () => import('../views/front/AccountView.vue'),
           meta: {
             title: 'BCcoffee | 會員專區',
             login: true,
@@ -44,7 +44,7 @@ const router = createRouter({
         {
           path: 'news',
           name: 'news',
-          component: () => import('@/views/front/NewsView.vue'),
+          component: () => import('../views/front/NewsView.vue'),
           meta: {
             title: 'BCcoffee | 最新消息',
             login: false,
@@ -54,7 +54,7 @@ const router = createRouter({
         {
           path: 'news/:id',
           name: 'newsInfo',
-          component: () => import('@/views/front/NewsInfoView.vue'),
+          component: () => import('../views/front/NewsInfoView.vue'),
           meta: {
             title: 'BCcoffee | 消息詳細資訊',
             login: false,
@@ -64,7 +64,7 @@ const router = createRouter({
         {
           path: 'qa',
           name: 'qa',
-          component: () => import('@/views/front/QaView.vue'),
+          component: () => import('../views/front/QaView.vue'),
           meta: {
             title: 'BCcoffee | 常見問題',
             login: false,
@@ -74,7 +74,7 @@ const router = createRouter({
         {
           path: 'contant',
           name: 'contant',
-          component: () => import('@/views/front/ContantView.vue'),
+          component: () => import('../views/front/ContantView.vue'),
           meta: {
             title: 'BCcoffee | 聯絡我們',
             login: false,
@@ -84,7 +84,7 @@ const router = createRouter({
         {
           path: 'products',
           name: 'products',
-          component: () => import('@/views/front/ProductsView.vue'),
+          component: () => import('../views/front/ProductsView.vue'),
           meta: {
             title: 'BCcoffee | 外送訂餐',
             login: false,
@@ -94,7 +94,7 @@ const router = createRouter({
         {
           path: 'checkout',
           name: 'checkout',
-          component: () => import('@/views/front/OrderCheckOutView.vue'),
+          component: () => import('../views/front/OrderCheckOutView.vue'),
           meta: {
             title: 'BCcoffee | 結帳',
             login: true,
@@ -104,7 +104,7 @@ const router = createRouter({
         {
           path: 'aboutus',
           name: 'aboutus',
-          component: () => import('@/views/front/AboutUsView.vue'),
+          component: () => import('../views/front/AboutUsView.vue'),
           meta: {
             title: 'BCcoffee | 關於我們',
             login: false,
@@ -114,7 +114,7 @@ const router = createRouter({
         {
           path: 'introduce',
           name: 'introduce',
-          component: () => import('@/views/front/ProductsIntroduceView.vue'),
+          component: () => import('../views/front/ProductsIntroduceView.vue'),
           meta: {
             title: 'BCcoffee | 關於我們',
             login: false,
@@ -125,12 +125,12 @@ const router = createRouter({
     },
     {
       path: '/admin',
-      component: () => import('@/layouts/AdminLayout.vue'),
+      component: () => import('../layouts/AdminLayout.vue'),
       children: [
         {
           path: '',
           name: 'admin-home',
-          component: () => import('@/views/admin/HomeView.vue'),
+          component: () => import('../views/admin/HomeView.vue'),
           meta: {
             title: 'BCcoffee | 管理',
             login: true,
@@ -140,7 +140,7 @@ const router = createRouter({
         {
           path: 'products',
           name: 'admin-products',
-          component: () => import('@/views/admin/ProductsView.vue'),
+          component: () => import('../views/admin/ProductsView.vue'),
           meta: {
             title: 'BCcoffee | 商品管理',
             login: true,
@@ -150,7 +150,7 @@ const router = createRouter({
         {
           path: 'news',
           name: 'admin-news',
-          component: () => import('@/views/admin/NewsView.vue'),
+          component: () => import('../views/admin/NewsView.vue'),
           meta: {
             title: 'BCcoffee | 消息管理',
             login: true,
@@ -160,7 +160,7 @@ const router = createRouter({
         {
           path: 'code',
           name: 'admin-code',
-          component: () => import('@/views/admin/CodeView.vue'),
+          component: () => import('../views/admin/CodeView.vue'),
           meta: {
             title: 'BCcoffee | 折扣碼管理',
             login: true,
@@ -170,7 +170,7 @@ const router = createRouter({
         {
           path: 'qa',
           name: 'admin-qa',
-          component: () => import('@/views/admin/QaView.vue'),
+          component: () => import('../views/admin/QaView.vue'),
           meta: {
             title: 'BCcoffee | 問題管理',
             login: true,
@@ -180,7 +180,7 @@ const router = createRouter({
         {
           path: 'orders',
           name: 'admin-orders',
-          component: () => import('@/views/admin/OrdersView.vue'),
+          component: () => import('../views/admin/OrdersView.vue'),
           meta: {
             title: 'BCcoffee | 訂單管理',
             login: true,
@@ -190,7 +190,7 @@ const router = createRouter({
         {
           path: 'users',
           name: 'admin-users',
-          component: () => import('@/views/admin/UsersView.vue'),
+          component: () => import('../views/admin/UsersView.vue'),
           meta: {
             title: 'BCcoffee | 會員管理',
             login: true,

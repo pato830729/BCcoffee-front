@@ -22,5 +22,5 @@
     <div class="switchProducts_btn_container"></div>
 </template>
 <script setup>
-import NavMenu from '@/components/NavMenu.vue'
+import NavMenu from '../../components/NavMenu.vue'
 </script>

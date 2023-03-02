@@ -124,7 +124,7 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
-import { apiAuth } from '@/plugins/axios'
+import { apiAuth } from '../../plugins/axios'
 import Swal from 'sweetalert2'
 
 const valid = ref(false)
@@ -170,17 +170,19 @@ const orders = reactive([]);
   try {
     const { data } = await apiAuth.get('/orders/all')
     orders.push(...data.result.map(order => {
+      console.log(order)
       order.totalPrice = order.products.reduce((total, current) => {
+        console.log(current)
         if (JSON.parse(current.custom).size == 'L') {
           return total + (current.p_id.lprice * current.quantity)
         } else {
           return total + (current.p_id.mprice * current.quantity)
         }
-
       }, 0)
       return order
     }))
   } catch (error) {
+    console.log(error)
     Swal.fire({
       icon: 'error',
       title: '失敗',

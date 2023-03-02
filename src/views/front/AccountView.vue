@@ -122,10 +122,10 @@
     </div>
 </template>
 <script setup>
-import NavMenu from '@/components/NavMenu.vue'
+import NavMenu from '../../components/NavMenu.vue'
 import { onMounted, ref, reactive } from 'vue'
-import { apiAuth } from '@/plugins/axios'
-import { useUserStore } from '@/stores/user'
+import { apiAuth } from '../../plugins/axios'
+import { useUserStore } from '../../stores/user'
 import { useRoute, useRouter } from 'vue-router'
 import Swal from 'sweetalert2'
 

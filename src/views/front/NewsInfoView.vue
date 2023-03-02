@@ -40,10 +40,10 @@
   </div>
 </template>
 <script setup>
-import NavMenu from '@/components/NavMenu.vue'
-import FloatCircle from '@/components/FloatCircle.vue'
+import NavMenu from '../../components/NavMenu.vue'
+import FloatCircle from '../../components/FloatCircle.vue'
 import { reactive } from 'vue'
-import { api } from '@/plugins/axios'
+import { api } from '../../plugins/axios'
 import { useRoute } from 'vue-router'
 import { Swal } from 'sweetalert2'
 import router from '../../plugins/router'

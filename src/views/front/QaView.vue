@@ -35,10 +35,10 @@
   </div>
 </template>
 <script setup>
-import NavMenu from '@/components/NavMenu.vue'
-import Qalist from '@/components/Qalist.vue'
+import NavMenu from '../../components/NavMenu.vue'
+import Qalist from '../../components/Qalist.vue'
 import { onMounted } from 'vue'
-import { api } from '@/plugins/axios'
+import { api } from '../../plugins/axios'
 import { reactive } from 'vue'
 import Swal from 'sweetalert2'
 

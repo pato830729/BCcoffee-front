@@ -31,12 +31,12 @@
   </div>
 </template>
 <script setup>
-import { api } from '@/plugins/axios'
+import { api } from '../../plugins/axios'
 import { reactive } from 'vue'
 import Swal from 'sweetalert2'
-import NavMenu from '@/components/NavMenu.vue'
-import FloatCircle from '@/components/FloatCircle.vue'
-import NewsCard from '@/components/NewsCard.vue'
+import NavMenu from '../../components/NavMenu.vue'
+import FloatCircle from '../../components/FloatCircle.vue'
+import NewsCard from '../../components/NewsCard.vue'
 import { onMounted } from 'vue'
 
 onMounted(() => {
